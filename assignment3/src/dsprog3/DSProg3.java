@@ -50,16 +50,15 @@ public class DSProg3 {
 			//System.out.println(words); // testing	
 			
 			Boolean skipWord = false;
-			if(skip.contains(word)){
+			if (skip.contains(word)) {
 				skipWord = true;
 			}
 
-			if(!skipWord){
+			if (!skipWord) {
 				total++;
-				if(words.containsKey(word)){
-					words.put(word, (words.get(word))+1);
-				}
-				else{
+				if (words.containsKey(word)) {
+					words.put(word, (words.get(word)) + 1);
+				} else {
 					words.put(word, 1);
 				}
 			}
@@ -85,7 +84,7 @@ public class DSProg3 {
 		 * array/list structure of WordFrequency (or Map.Entry) objects.
 		 */
 		ArrayList<WordFrequency> pairs = new ArrayList<WordFrequency>(); //Stores words
-		for(String key : words.keySet()){
+		for (String key : words.keySet()) {
 			pairs.add(new WordFrequency(key, words.get(key)));
 		}
 		/**ADD CODE
@@ -116,16 +115,16 @@ public class DSProg3 {
 		System.out.println("number words (no duplicates): " + pairs.size());
 		
 			
-        System.out.println("________________");
-        int maxSize = maxPairs;
-        int pairNum = 0;
-        if(pairs.size() < maxPairs)
-        	maxSize = pairs.size();
-        while(pairNum < maxSize){
-        	String word = pairs.get(pairNum).word;
-        	int occur = pairs.get(pairNum).numocc;
-        	System.out.println(word + ": " + occur);
-        	pairNum++;
-        }
+		System.out.println("________________");
+		int maxSize = maxPairs;
+		int pairNum = 0;
+		if (pairs.size() < maxPairs)
+			maxSize = pairs.size();
+		while (pairNum < maxSize) {
+			String word = pairs.get(pairNum).word;
+			int occur = pairs.get(pairNum).numocc;
+			System.out.println(word + ": " + occur);
+			pairNum++;
+		}
 	}
 }
